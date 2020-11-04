@@ -71,5 +71,34 @@ class Features():
         print("Weiß: " + str(white_count))
         print("Unknown: " + str(unknown_count))
 
+        colour_list = {}
+        colour_list["Rot"] = red_count
+        colour_list["Blau"] = blue_count
+        colour_list["Schwarz"] = black_count
+        colour_list["Weiß"] = white_count
+        colour_list["Unknown"] = unknown_count
+
+        sorted_colour_list = sorted(colour_list.items(), key=lambda x: x[1])
+
+        frst_colour = sorted_colour_list[-1][0]
+        scnd_colour = sorted_colour_list[-2][0]
+        thrd_colour = sorted_colour_list[-3][0]
+
+        self.write_features_to_file(frst_colour, scnd_colour, thrd_colour)
+    
+    def write_features_to_file(self, frst_colour, scnd_colour, thrd_colour):
+        file_name = "features_" + sys.argv[1] + ".txt"
+
+        features = (""
+        "============== FARBANZAHL ==============\n"
+        "----------- Alle Koordinaten -----------\n"
+        "Häufigste Farbe: " + frst_colour + " \n"
+        "Zweithäufigste Farbe: " + scnd_colour + " \n"
+        "Dritthäufigste Farbe: " + thrd_colour + " \n")
+
+        f = open(file_name, "w+", encoding="utf-8")
+        f.write(features)
+        f.close()
+
 
 Features()
