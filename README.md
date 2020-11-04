@@ -1,0 +1,1 @@
+This is a quick and dirty conversion of the "learner" framework from Java to Python. Our professor gave this out as a Java project. Use at your own risk. Could possibly kill kittens.
