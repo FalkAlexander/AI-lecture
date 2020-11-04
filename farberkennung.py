@@ -1,5 +1,5 @@
 class Farberkennung():
-    def __get_color_of_pixel(argb):
+    def __get_color_of_pixel(self, argb):
         pass
 
 
