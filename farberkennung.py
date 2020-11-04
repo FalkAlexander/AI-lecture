@@ -1,6 +1,17 @@
 class Farberkennung():
     def __get_color_of_pixel(self, argb):
-        pass
+        alpha = (argb >> 24) & 255
+        red = (argb >> 16) & 255
+        green = (argb >> 8) & 255
+        blue = argb & 255
+
+        f = Farbe(red, green, blue)
+        luminance = (red * 0.2126 + green * 0.7152 + blue * 0.0722) / 255
+    
+        if luminance >= 0.05:
+            return f.get_farbe_hell()
+        else:
+            return f.get_farbe_dunkel()    
 
 
 class Farbe():
