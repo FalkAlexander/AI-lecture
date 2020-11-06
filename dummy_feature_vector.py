@@ -18,4 +18,4 @@ class DummyFeatureVector(FeatureVector):
         return 3
     
     def get_feature_value(self, i):
-        return feature[i]
+        return self.feature[i]
